@@ -1,12 +1,12 @@
-NAME=$1;
-COMPONENT_PATH=$NAME/$NAME.tsx
-INDEX_PATH=$NAME/index.tsx
+COMPONENT_NAME=$1;
+COMPONENT_FILENAME=$(basename "$COMPONENT_NAME")
+COMPONENT_PATH=$COMPONENT_NAME/$COMPONENT_FILENAME.tsx
 COMPONENT_BOILERPLATE="import React from 'react';
-import { I${NAME}Props } from './interfaces';
+import { I${COMPONENT_NAME}Props } from './interfaces';
 import styles from './styles.module.scss';
 
-const $NAME: React.FC<I${NAME}Props> = () => {
+const $COMPONENT_NAME: React.FC<I${COMPONENT_NAME}Props> = () => {
     return <div>Hello world!</div>
 }
 
-export default $NAME;"
+export default $COMPONENT_NAME;"

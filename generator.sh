@@ -20,7 +20,7 @@
         if [ ! -d "$FOLDER" ]; then
             print_colored_message "$LOCAL_CREATE_FOLDER" blue
             print_colored_message "        - $FOLDER/" yellow
-            mkdir $FOLDER
+            mkdir -p $FOLDER
         else
             print_colored_message "$ERROR_LOCAL_CREATE_FOLDER" red
         fi
@@ -47,7 +47,7 @@
         if [ ! -f "$FILEPATH" ]; then
             print_colored_message "$LOCAL_CREATE_FILE" blue
             print_colored_message "        - $FILEPATH/" yellow
-            echo "$FILECONTENT" >"$FILEPATH"
+            echo "$FILECONTENT" > "$FILEPATH"
         else
             print_colored_message "$ERROR_LOCAL_CREATE_FILE " red
         fi
@@ -55,11 +55,12 @@
 
     create_files() {
         print_colored_message "Creating code" blue
+        local FILENAME=$(basename "$NAME")
         create_file "$INDEX_PATH" "$INDEX_BOILERPLATE"
         create_file "$COMPONENT_PATH" "$COMPONENT_BOILERPLATE"
         create_file "$NAME/styles.module.scss" ""
         create_file "$NAME/interfaces/index.ts" "$INTERFACE_BOILERPLATE"
-        create_file "$NAME/$NAME.test.tsx" "$TEST_BOILERPLATE"
+        create_file "$NAME/$FILENAME.test.tsx" "$TEST_BOILERPLATE"
         create_file "$NAME/mocks/__mock.ts" "$MOCK_BOILERPLATE"
     }
 

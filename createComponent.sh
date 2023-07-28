@@ -1,4 +1,6 @@
 #!/bin/bash
+# REALPTH=realpath "$0" | sed 's|\(.*\)/.*|\1|';
+# cd $REALPTH
 source ./utils.sh $2
 source ./help.sh
 source ./main.sh

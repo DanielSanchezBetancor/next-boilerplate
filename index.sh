@@ -1,4 +1,5 @@
-NAME=$1;
-INDEX_BOILERPLATE="import $NAME from './$NAME';
+INDEX_NAME=$1;
+INDEX_PATH=$INDEX_NAME/index.tsx
+INDEX_BOILERPLATE="import $INDEX_NAME from './$INDEX_NAME';
 
-export default $NAME;";
+export default $INDEX_NAME;";
