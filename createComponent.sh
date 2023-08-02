@@ -1,16 +1,22 @@
 #!/bin/bash
-# REALPTH=realpath "$0" | sed 's|\(.*\)/.*|\1|';
-# cd $REALPTH
-source ./utils.sh $2
-source ./help.sh
-source ./main.sh
+SELECTED_USERNAME=$1
+X=$2
 
+# Grabbing user path to create the files
+USERPATH=$(pwd)
+echo $USERPATH
+FULLSCRIPTPATH="${BASH_SOURCE[0]}"
+SCRIPTPATH=$(dirname "$FULLSCRIPTPATH")
 
-if [[ $1 = '' || $1 = '-h' || $1 = '--help' ]]; then
+source $SCRIPTPATH/utils.sh
+source $SCRIPTPATH/help.sh
+source $SCRIPTPATH/main.sh
+
+if [[ $SELECTED_USERNAME = '' || $SELECTED_USERNAME = '-h' || $SELECTED_USERNAME = '--help' ]]; then
     show_help
     exit 1
 else
-    validate_component_name $1
-    main $1 $2
+    validate_component_name
+    main
     exit 0
 fi

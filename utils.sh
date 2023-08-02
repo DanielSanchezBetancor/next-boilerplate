@@ -1,4 +1,4 @@
-source ./texts.sh $1
+source $SCRIPTPATH/texts.sh $SCRIPTPATH $2
 
 print_colored_message() {
     local message=$1
@@ -27,8 +27,7 @@ print_colored_message() {
 }
 
 validate_component_name() {
-    local component_name=$1
-    local first_char=${component_name:0:1} # Obtener el primer carácter del nombre del componente
+    local first_char=${SELECTED_USERNAME:0:1}
 
     if [[ ! "$first_char" =~ [[:upper:]] ]]; then
         print_colored_message "$ERROR_UPPERCASE" "red"

@@ -1,4 +1,4 @@
-source ./secret_texts.sh
+source $SCRIPTPATH/secret_texts.sh
 
 ERROR_UPPERCASE="Error: Component name must start with an uppercase letter."
 CREATING_FOLDERS="Creating folders"

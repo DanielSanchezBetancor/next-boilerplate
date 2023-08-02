@@ -1,4 +1,4 @@
-source ./utils.sh
+source $SCRIPTPATH/utils.sh
 
 SECRET_KEY=dsanchez
 SECRET_EXECUTED=false
