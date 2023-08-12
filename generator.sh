@@ -63,7 +63,7 @@ create_files() {
     create_file "$SELECTED_USERNAME/interfaces/index.ts" "$INTERFACE_BOILERPLATE"
     create_file "$SELECTED_USERNAME/$FILENAME.test.tsx" "$TEST_BOILERPLATE"
     create_file "$SELECTED_USERNAME/mocks/__mock.ts" "$MOCK_BOILERPLATE"
-    create_file "$HOOK_PATH" "$HOOK_BOILERPLATE"
+    create_file "$HOOK_PATH" "$HOOK_CODE"
     create_file "$TEST_HOOK_PATH" "$TEST_HOOK_CODE"
 }
 
